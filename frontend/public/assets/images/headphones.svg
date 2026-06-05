@@ -1,0 +1,17 @@
+<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+  </defs>
+  <rect width="100" height="100" rx="20" fill="#111827"/>
+  <!-- Headband -->
+  <path d="M30 55 C 30 25, 70 25, 70 55" stroke="url(#g1)" stroke-width="5" stroke-linecap="round" fill="none"/>
+  <!-- Ear cups -->
+  <rect x="22" y="48" width="12" height="22" rx="6" fill="#6366f1" />
+  <rect x="66" y="48" width="12" height="22" rx="6" fill="#06b6d4" />
+  <!-- Cushions -->
+  <rect x="18" y="52" width="5" height="14" rx="2" fill="rgba(255,255,255,0.2)" />
+  <rect x="77" y="52" width="5" height="14" rx="2" fill="rgba(255,255,255,0.2)" />
+</svg>
