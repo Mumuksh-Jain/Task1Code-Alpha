@@ -92,7 +92,7 @@ const Checkout = () => {
                 id="address"
                 required
                 rows={3}
-                placeholder="Street name, City, Zipcode, State"
+                placeholder="Flat/House No., Street Name, Area, City, State, Pin Code"
                 value={shippingAddress}
                 onChange={(e) => setShippingAddress(e.target.value)}
                 className="form-control"
@@ -106,7 +106,7 @@ const Checkout = () => {
                 id="phone"
                 type="tel"
                 required
-                placeholder="+1 (555) 000-0000"
+                placeholder="9876543210"
                 value={contactNumber}
                 onChange={(e) => setContactNumber(e.target.value)}
                 className="form-control"
@@ -167,8 +167,8 @@ const Checkout = () => {
 
             <div style={{ 
               marginTop: '1.5rem', 
-              background: 'rgba(99, 102, 241, 0.05)', 
-              border: '1px solid rgba(99, 102, 241, 0.15)',
+              background: 'var(--bg-tertiary)', 
+              border: '1px solid var(--glass-border)',
               borderRadius: 'var(--border-radius-sm)',
               padding: '0.75rem 1rem',
               display: 'flex',
@@ -193,7 +193,7 @@ const Checkout = () => {
             ) : (
               <>
                 <ShoppingCart size={18} />
-                <span>Place Order (${grandTotal.toLocaleString()})</span>
+                <span>Place Order (₹{grandTotal.toLocaleString()})</span>
               </>
             )}
           </button>
@@ -223,7 +223,7 @@ const Checkout = () => {
                   <div style={{ 
                     width: '50px', 
                     height: '50px', 
-                    background: '#131924', 
+                    background: '#f4f4f5', 
                     borderRadius: 'var(--border-radius-sm)',
                     display: 'flex',
                     alignItems: 'center',
@@ -238,11 +238,11 @@ const Checkout = () => {
                       {product.name}
                     </div>
                     <div style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>
-                      Qty: {item.quantity} × ${product.price.toLocaleString()}
+                      Qty: {item.quantity} × ₹{product.price.toLocaleString()}
                     </div>
                   </div>
                   <div style={{ fontWeight: 600, fontSize: '0.9rem' }}>
-                    ${(product.price * item.quantity).toLocaleString()}
+                    ₹{(product.price * item.quantity).toLocaleString()}
                   </div>
                 </div>
               );
@@ -252,11 +252,11 @@ const Checkout = () => {
           <div style={{ borderTop: '1px solid var(--glass-border)', paddingTop: '1.25rem', display: 'flex', flexDirection: 'column', gap: '0.75rem', fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
               <span>Items Total ({cartItemsCount})</span>
-              <span>${cartTotalAmount.toLocaleString()}</span>
+              <span>₹{cartTotalAmount.toLocaleString()}</span>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
               <span>Shipping Fee</span>
-              <span>{estShipping === 0 ? <span style={{ color: 'var(--success)', fontWeight: 600 }}>FREE</span> : `$${estShipping}`}</span>
+              <span>{estShipping === 0 ? <span style={{ color: 'var(--success)', fontWeight: 600 }}>FREE</span> : `₹${estShipping}`}</span>
             </div>
             <div style={{ 
               display: 'flex', 
@@ -269,7 +269,7 @@ const Checkout = () => {
               marginTop: '0.25rem'
             }}>
               <span>Total Price</span>
-              <span>${grandTotal.toLocaleString()}</span>
+              <span>₹{grandTotal.toLocaleString()}</span>
             </div>
           </div>
         </div>

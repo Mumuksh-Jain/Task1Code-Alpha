@@ -37,13 +37,13 @@ const ProductCard = ({ product }) => {
         position: 'absolute',
         top: '1rem',
         left: '1rem',
-        background: 'rgba(11, 15, 25, 0.7)',
+        background: 'var(--bg-tertiary)',
         border: '1px solid var(--glass-border)',
         padding: '0.25rem 0.75rem',
         borderRadius: 'var(--border-radius-full)',
         fontSize: '0.75rem',
         fontWeight: 600,
-        color: 'var(--accent-secondary)',
+        color: 'var(--text-primary)',
         zIndex: 2
       }}>
         {product.category}
@@ -53,7 +53,7 @@ const ProductCard = ({ product }) => {
       <div style={{ 
         width: '100%', 
         height: '240px', 
-        background: '#131924', 
+        background: '#f4f4f5', 
         display: 'flex', 
         alignItems: 'center', 
         justifyContent: 'center',
@@ -103,7 +103,7 @@ const ProductCard = ({ product }) => {
           <div>
             <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Price</div>
             <div style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--text-primary)' }}>
-              ${product.price.toLocaleString()}
+              ₹{product.price.toLocaleString()}
             </div>
           </div>
 

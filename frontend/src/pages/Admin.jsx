@@ -172,7 +172,7 @@ const Admin = () => {
 
       {/* Form Card (Create/Edit) */}
       {isFormOpen && (
-        <div className="glass-card" style={{ padding: '2rem', marginBottom: '2.5rem', border: '1px solid rgba(99, 102, 241, 0.25)' }}>
+        <div className="glass-card" style={{ padding: '2rem', marginBottom: '2.5rem', border: '1px solid var(--glass-border)' }}>
           <h3 style={{ fontSize: '1.25rem', marginBottom: '1.5rem', borderBottom: '1px solid var(--glass-border)', paddingBottom: '0.5rem' }}>
             {editingId ? 'Edit Product Parameters' : 'Register New Product'}
           </h3>
@@ -184,7 +184,7 @@ const Admin = () => {
                 type="text"
                 required
                 className="form-control"
-                placeholder="AeroSound Pro Headphones"
+                placeholder="Minimalist Bluetooth Headphones"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               />
@@ -209,14 +209,14 @@ const Admin = () => {
             </div>
 
             <div className="form-group">
-              <label className="form-label">Price ($)</label>
+              <label className="form-label">Price (₹)</label>
               <input
                 type="number"
                 step="0.01"
                 min="0"
                 required
                 className="form-control"
-                placeholder="299"
+                placeholder="12999"
                 value={price}
                 onChange={(e) => setPrice(e.target.value)}
               />
@@ -241,7 +241,7 @@ const Admin = () => {
                 type="text"
                 required
                 className="form-control"
-                placeholder="/assets/images/headphones.png"
+                placeholder="/assets/images/headphones.svg"
                 value={imageUrl}
                 onChange={(e) => setImageUrl(e.target.value)}
               />
@@ -253,7 +253,7 @@ const Admin = () => {
                 required
                 rows={4}
                 className="form-control"
-                placeholder="Describe product attributes, warranty, acoustics, and key specifications details..."
+                placeholder="Enter simple, clean descriptions of product dimensions, weight, specifications..."
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
               />
@@ -301,19 +301,19 @@ const Admin = () => {
               </thead>
               <tbody>
                 {products.map((prod) => (
-                  <tr key={prod._id} style={{ borderBottom: '1px solid var(--glass-border)', transition: 'background 0.2s' }} onMouseOver={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.01)'} onMouseOut={(e) => e.currentTarget.style.background = 'none'}>
+                  <tr key={prod._id} style={{ borderBottom: '1px solid var(--glass-border)', transition: 'background 0.2s' }} onMouseOver={(e) => e.currentTarget.style.background = 'rgba(0,0,0,0.01)'} onMouseOut={(e) => e.currentTarget.style.background = 'none'}>
                     <td style={{ padding: '1rem 1.5rem' }}>
-                      <div style={{ width: '40px', height: '40px', background: '#131924', borderRadius: '4px', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '0.2rem' }}>
+                      <div style={{ width: '40px', height: '40px', background: '#f4f4f5', borderRadius: '4px', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '0.2rem' }}>
                         <img src={prod.imageUrl} alt={prod.name} style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }} />
                       </div>
                     </td>
                     <td style={{ padding: '1rem 1.5rem', fontWeight: 600 }}>{prod.name}</td>
                     <td style={{ padding: '1rem 1.5rem' }}>
-                      <span className="badge badge-success" style={{ background: 'rgba(6, 182, 212, 0.12)', color: 'var(--accent-secondary)', border: '1px solid rgba(6, 182, 212, 0.25)' }}>
+                      <span className="badge" style={{ background: 'var(--bg-tertiary)', color: 'var(--text-primary)', border: '1px solid var(--glass-border)' }}>
                         {prod.category}
                       </span>
                     </td>
-                    <td style={{ padding: '1rem 1.5rem', fontWeight: 600 }}>${prod.price.toLocaleString()}</td>
+                    <td style={{ padding: '1rem 1.5rem', fontWeight: 600 }}>₹{prod.price.toLocaleString()}</td>
                     <td style={{ padding: '1rem 1.5rem' }}>
                       {prod.stock === 0 ? (
                         <span className="badge badge-danger">Out of Stock</span>
@@ -327,9 +327,9 @@ const Admin = () => {
                           onClick={() => handleEditInit(prod)}
                           style={{ 
                             cursor: 'pointer', 
-                            color: 'var(--accent-secondary)', 
-                            background: 'rgba(6, 182, 212, 0.05)',
-                            border: '1px solid rgba(6, 182, 212, 0.25)',
+                            color: 'var(--text-primary)', 
+                            background: 'var(--bg-tertiary)',
+                            border: '1px solid var(--glass-border)',
                             padding: '0.4rem', 
                             borderRadius: '4px',
                             display: 'flex'
@@ -342,8 +342,8 @@ const Admin = () => {
                           style={{ 
                             cursor: 'pointer', 
                             color: 'var(--danger)', 
-                            background: 'rgba(239, 68, 68, 0.05)',
-                            border: '1px solid rgba(239, 68, 68, 0.25)',
+                            background: 'rgba(239, 68, 68, 0.03)',
+                            border: '1px solid rgba(239, 68, 68, 0.1)',
                             padding: '0.4rem', 
                             borderRadius: '4px',
                             display: 'flex'

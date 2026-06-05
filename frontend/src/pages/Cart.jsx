@@ -70,7 +70,7 @@ const Cart = () => {
                 <div style={{ 
                   width: '80px', 
                   height: '80px', 
-                  background: '#131924', 
+                  background: '#f4f4f5', 
                   borderRadius: 'var(--border-radius-sm)', 
                   display: 'flex', 
                   alignItems: 'center', 
@@ -85,7 +85,7 @@ const Cart = () => {
                   <Link to={`/product/${product._id}`} style={{ fontWeight: 600, fontSize: '1.05rem', hover: { color: 'var(--accent-primary)' } }}>
                     {product.name}
                   </Link>
-                  <div style={{ color: 'var(--accent-secondary)', fontSize: '0.85rem', marginTop: '0.25rem', fontWeight: 600 }}>
+                  <div style={{ color: 'var(--text-secondary)', fontSize: '0.85rem', marginTop: '0.25rem', fontWeight: 600 }}>
                     {product.category}
                   </div>
                 </div>
@@ -93,14 +93,14 @@ const Cart = () => {
                 {/* Pricing unit */}
                 <div style={{ width: '100px' }}>
                   <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Unit Price</div>
-                  <div style={{ fontWeight: 600 }}>${product.price.toLocaleString()}</div>
+                  <div style={{ fontWeight: 600 }}>₹{product.price.toLocaleString()}</div>
                 </div>
 
                 {/* Quantity Manager */}
                 <div style={{ 
                   display: 'flex', 
                   alignItems: 'center', 
-                  background: 'rgba(255,255,255,0.03)', 
+                  background: 'var(--bg-tertiary)', 
                   border: '1px solid var(--glass-border)',
                   borderRadius: 'var(--border-radius-sm)',
                   padding: '0.25rem'
@@ -126,7 +126,7 @@ const Cart = () => {
                 <div style={{ width: '120px' }}>
                   <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Total Price</div>
                   <div style={{ fontWeight: 700, color: 'var(--text-primary)' }}>
-                    ${(product.price * item.quantity).toLocaleString()}
+                    ₹{(product.price * item.quantity).toLocaleString()}
                   </div>
                 </div>
 
@@ -164,15 +164,15 @@ const Cart = () => {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem', marginBottom: '1.5rem' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', color: 'var(--text-secondary)' }}>
               <span>Items Subtotal</span>
-              <span>${cartTotalAmount.toLocaleString()}</span>
+              <span>₹{cartTotalAmount.toLocaleString()}</span>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between', color: 'var(--text-secondary)' }}>
               <span>Shipping Fee</span>
-              <span>{estShipping === 0 ? <span style={{ color: 'var(--success)', fontWeight: 600 }}>FREE</span> : `$${estShipping}`}</span>
+              <span>{estShipping === 0 ? <span style={{ color: 'var(--success)', fontWeight: 600 }}>FREE</span> : `₹${estShipping}`}</span>
             </div>
             {estShipping > 0 && (
               <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
-                Add ${(500 - cartTotalAmount).toLocaleString()} more for free shipping!
+                Add ₹{(500 - cartTotalAmount).toLocaleString()} more for free shipping!
               </div>
             )}
           </div>
@@ -187,7 +187,7 @@ const Cart = () => {
             marginBottom: '2rem'
           }}>
             <span>Total</span>
-            <span style={{ color: 'var(--text-primary)' }}>${grandTotal.toLocaleString()}</span>
+            <span style={{ color: 'var(--text-primary)' }}>₹{grandTotal.toLocaleString()}</span>
           </div>
 
           <button 

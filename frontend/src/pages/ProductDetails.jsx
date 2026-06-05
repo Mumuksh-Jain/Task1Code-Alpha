@@ -104,7 +104,7 @@ const ProductDetails = () => {
         {/* Left: Product Image Box */}
         <div className="glass-card flex-center" style={{ 
           padding: '3rem', 
-          background: '#131924',
+          background: '#f4f4f5',
           borderRadius: 'var(--border-radius-lg)',
           boxShadow: 'none',
           minHeight: '400px'
@@ -124,7 +124,7 @@ const ProductDetails = () => {
         <div>
           {/* Category Tag */}
           <span style={{ 
-            color: 'var(--accent-secondary)', 
+            color: 'var(--text-secondary)', 
             fontSize: '0.875rem', 
             fontWeight: 700,
             textTransform: 'uppercase',
@@ -149,7 +149,7 @@ const ProductDetails = () => {
           </div>
 
           <h2 style={{ fontSize: '2.25rem', fontWeight: 800, marginBottom: '1.5rem', color: 'var(--text-primary)' }}>
-            ${product.price.toLocaleString()}
+            ₹{product.price.toLocaleString()}
           </h2>
 
           <p style={{ color: 'var(--text-secondary)', fontSize: '1.05rem', lineHeight: '1.7', marginBottom: '2.5rem' }}>
@@ -165,7 +165,7 @@ const ProductDetails = () => {
                 <div style={{ 
                   display: 'flex', 
                   alignItems: 'center', 
-                  background: 'rgba(255, 255, 255, 0.04)',
+                  background: 'var(--bg-tertiary)',
                   border: '1px solid var(--glass-border)',
                   borderRadius: 'var(--border-radius-sm)',
                   padding: '0.35rem'
@@ -179,7 +179,8 @@ const ProductDetails = () => {
                       height: '32px', 
                       borderRadius: 'var(--border-radius-sm)',
                       cursor: 'pointer',
-                      background: 'rgba(255,255,255,0.03)',
+                      background: 'var(--bg-secondary)',
+                      border: '1px solid var(--glass-border)',
                       opacity: quantity <= 1 ? 0.3 : 1
                     }}
                   >
@@ -195,7 +196,8 @@ const ProductDetails = () => {
                       height: '32px', 
                       borderRadius: 'var(--border-radius-sm)',
                       cursor: 'pointer',
-                      background: 'rgba(255,255,255,0.03)',
+                      background: 'var(--bg-secondary)',
+                      border: '1px solid var(--glass-border)',
                       opacity: quantity >= product.stock ? 0.3 : 1
                     }}
                   >
@@ -234,15 +236,15 @@ const ProductDetails = () => {
             textAlign: 'center'
           }}>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
-              <ShieldCheck size={24} style={{ color: 'var(--accent-secondary)' }} />
+              <ShieldCheck size={24} style={{ color: 'var(--text-primary)' }} />
               <span style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--text-secondary)' }}>Secure Warranty</span>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
-              <Truck size={24} style={{ color: 'var(--accent-secondary)' }} />
+              <Truck size={24} style={{ color: 'var(--text-primary)' }} />
               <span style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--text-secondary)' }}>Express Shipping</span>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
-              <RefreshCw size={24} style={{ color: 'var(--accent-secondary)' }} />
+              <RefreshCw size={24} style={{ color: 'var(--text-primary)' }} />
               <span style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--text-secondary)' }}>30-Day Exchange</span>
             </div>
           </div>

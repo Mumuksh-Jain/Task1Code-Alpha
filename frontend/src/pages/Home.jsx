@@ -54,25 +54,25 @@ const Home = () => {
       }}>
         <div style={{ maxWidth: '600px', zIndex: 2 }}>
           <span style={{ 
-            background: 'rgba(99, 102, 241, 0.15)', 
-            border: '1px solid rgba(99, 102, 241, 0.3)', 
+            background: 'var(--bg-secondary)', 
+            border: '1px solid var(--glass-border)', 
             padding: '0.4rem 1rem', 
             borderRadius: 'var(--border-radius-full)', 
             fontSize: '0.75rem', 
             fontWeight: 700, 
-            color: 'var(--accent-primary)',
+            color: 'var(--text-primary)',
             textTransform: 'uppercase',
             letterSpacing: '0.05em',
             display: 'inline-block',
             marginBottom: '1rem'
           }}>
-            Summer Collection 2026
+            Minimalist Collection
           </span>
           <h1 style={{ fontSize: '3rem', lineHeight: '1.15', marginBottom: '1rem', fontWeight: 800 }}>
-            Next-Gen Gear for <span style={{ background: 'var(--accent-gradient)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Modern Minds</span>
+            Next-Gen Gear for <span style={{ color: 'var(--text-primary)', borderBottom: '2px solid var(--text-primary)' }}>Modern Spaces</span>
           </h1>
           <p style={{ color: 'var(--text-secondary)', fontSize: '1.125rem', marginBottom: '1.75rem' }}>
-            Elevate your setup with premium peripherals, wearables, and audio technology engineered for maximum output.
+            Elevate your workspace with premium peripherals, wearables, and audio technology engineered for maximum output.
           </p>
         </div>
       </section>
@@ -101,7 +101,7 @@ const Home = () => {
             }}>
               <input
                 type="text"
-                placeholder="Search premium products..."
+                placeholder="Search products..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 className="form-control"
@@ -185,9 +185,9 @@ const Home = () => {
                     fontWeight: 600,
                     cursor: 'pointer',
                     transition: 'var(--transition-smooth)',
-                    background: selectedCategory === cat ? 'var(--accent-gradient)' : 'rgba(255, 255, 255, 0.04)',
-                    color: selectedCategory === cat ? 'white' : 'var(--text-secondary)',
-                    border: selectedCategory === cat ? 'none' : '1px solid var(--glass-border)'
+                    background: selectedCategory === cat ? 'var(--accent-primary)' : 'var(--bg-secondary)',
+                    color: selectedCategory === cat ? 'var(--bg-secondary)' : 'var(--text-secondary)',
+                    border: '1px solid ' + (selectedCategory === cat ? 'var(--accent-primary)' : 'var(--glass-border)')
                   }}
                   onMouseOver={(e) => {
                     if (selectedCategory !== cat) {

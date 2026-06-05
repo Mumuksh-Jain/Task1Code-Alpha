@@ -85,7 +85,7 @@ const Orders = () => {
                 <div>
                   <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', textAlign: 'right' }}>Total Cost</div>
                   <div style={{ fontWeight: 700, fontSize: '1.15rem', display: 'flex', alignItems: 'center', color: 'var(--text-primary)' }}>
-                    ${order.totalAmount.toLocaleString()}
+                    ₹{order.totalAmount.toLocaleString()}
                   </div>
                 </div>
                 <span className={`badge ${order.status === 'Completed' ? 'badge-success' : 'badge-warning'}`}>
@@ -104,7 +104,7 @@ const Orders = () => {
                     <div style={{ 
                       width: '45px', 
                       height: '45px', 
-                      background: '#131924', 
+                      background: '#f4f4f5', 
                       borderRadius: 'var(--border-radius-sm)', 
                       display: 'flex', 
                       alignItems: 'center', 
@@ -119,11 +119,11 @@ const Orders = () => {
                         {item.name}
                       </div>
                       <div style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>
-                        Quantity: {item.quantity} × ${item.price.toLocaleString()}
+                        Quantity: {item.quantity} × ₹{item.price.toLocaleString()}
                       </div>
                     </div>
                     <div style={{ fontWeight: 600, fontSize: '0.9rem', flexShrink: 0 }}>
-                      ${(item.price * item.quantity).toLocaleString()}
+                      ₹{(item.price * item.quantity).toLocaleString()}
                     </div>
                   </div>
                 ))}
@@ -142,7 +142,7 @@ const Orders = () => {
                 <div style={{ fontSize: '0.875rem', fontWeight: 600, color: 'var(--text-secondary)' }}>Delivery Information</div>
                 
                 <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem' }}>
-                  <MapPin size={18} style={{ color: 'var(--accent-secondary)', flexShrink: 0, marginTop: '0.2rem' }} />
+                  <MapPin size={18} style={{ color: 'var(--text-primary)', flexShrink: 0, marginTop: '0.2rem' }} />
                   <div>
                     <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Shipping Destination</div>
                     <div style={{ fontSize: '0.9rem', color: 'var(--text-primary)', lineHeight: '1.4' }}>{order.shippingAddress}</div>
@@ -150,7 +150,7 @@ const Orders = () => {
                 </div>
 
                 <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem' }}>
-                  <Phone size={18} style={{ color: 'var(--accent-secondary)', flexShrink: 0, marginTop: '0.2rem' }} />
+                  <Phone size={18} style={{ color: 'var(--text-primary)', flexShrink: 0, marginTop: '0.2rem' }} />
                   <div>
                     <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Contact Information</div>
                     <div style={{ fontSize: '0.9rem', color: 'var(--text-primary)' }}>{order.contactNumber}</div>
